@@ -10,7 +10,7 @@ import static org.mockito.Mockito.verify;
 public class FlyingSaucerTest {
 
 
-    //BAD WAY
+    //BAD WAY - we are bound to behavior of SpaceShip
     @Test
     public void shooting_enemy_inflicting_damage_on_its_health() {
         FlyingSaucer flyingSaucer = new FlyingSaucer(10, 5);
@@ -28,7 +28,7 @@ public class FlyingSaucerTest {
 
 
 
-    //GOOD WAY
+    //GOOD WAY - we are independent of SpaceShip
     @Test
     public void shooting_enemy_inflicting_damage_equals_to_power() {
         FlyingSaucer flyingSaucer = new FlyingSaucer(10, 5);
