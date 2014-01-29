@@ -9,7 +9,8 @@ import static org.mockito.Mockito.*;
 public class FlyingSaucerTest {
 
 
-    //BAD WAY
+    //BAD WAY - try to reafcator FlyingSaucer so that it will not use Machinery to store gunPower - test will fail
+    //          even if algorith will be the same
     @Test
     public void should_call_machinery_when_calculating_power() {
         FlyingSaucer flyingSaucer = new FlyingSaucer(10, 5);
@@ -27,7 +28,8 @@ public class FlyingSaucerTest {
 
 
 
-    //ALSO BAD WAY
+    //ALSO BAD WAY - try to reafcator FlyingSaucer so that it will not use Machinery to store gunPower - test will fail
+    //               even if algorith will be the same
     @Test
     public void should_use_machinery_when_calculating_power() {
         FlyingSaucer flyingSaucer = new FlyingSaucer(10, 5);
@@ -47,7 +49,8 @@ public class FlyingSaucerTest {
 
 
 
-    //GOOD WAY
+    //GOOD WAY - test Query methods by thay retur value
+    //           we are not connected with implementation details
     @Test
     public void should_calculate_power() {
         FlyingSaucer flyingSaucer = new FlyingSaucer(10, 5);
