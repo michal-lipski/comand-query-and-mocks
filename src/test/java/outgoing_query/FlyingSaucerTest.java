@@ -1,5 +1,6 @@
 package outgoing_query;
 
+import org.joda.time.DateTime;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -10,16 +11,20 @@ import static org.mockito.Mockito.when;
 public class FlyingSaucerTest {
 
 
+    private final DateTime now = DateTime.now();
+
     @Test
     public void gathers_data_from_scanner() {
         //we need those two ugly lines to stub scanner
         Scanner scanner = mock(Scanner.class);
-        when(scanner.getData()).thenReturn(1.5);
-        FlyingSaucer flyingSaucer = new FlyingSaucer(scanner);
+        Timer timer = mock(Timer.class);
+        when(scanner.getData()).thenReturn(2.0);
+        when(timer.getTime()).thenReturn(now);
+        FlyingSaucer flyingSaucer = new FlyingSaucer(scanner, timer);
 
         String data = flyingSaucer.gatherData();
 
-        assertThat(data).isEqualTo("1.5");
+        assertThat(data).isEqualTo("2016.0");
     }
 
 
@@ -36,11 +41,11 @@ public class FlyingSaucerTest {
     //              Maybe we will not need to test it at all?
     @Test
     public void gathers_data_() {
-        DataAwareFlyingSaucer flyingSaucer = new DataAwareFlyingSaucer(1.5);
+        DataAwareFlyingSaucer flyingSaucer = new DataAwareFlyingSaucer(2.0, now);
 
         String data = flyingSaucer.gatherData();
 
-        assertThat(data).isEqualTo("1.5");
+        assertThat(data).isEqualTo("2016.0");
     }
 
 
