@@ -9,16 +9,16 @@ import static org.mockito.Mockito.*;
 public class FlyingSaucerTest {
 
 
-    //BAD WAY - try to reafcator FlyingSaucer so that it will not use Machinery to store gunPower - test will fail
-    //          even if algorith will be the same
+    //BAD WAY - try to reafactor FlyingSaucer so that it will not use Machinery to store gunPower - test will fail
+    //          even if functionality will be the same
     @Test
     public void should_call_machinery_when_calculating_power() {
         FlyingSaucer flyingSaucer = new FlyingSaucer(10, 5);
-        flyingSaucer.machinery = mock(Machinery.class);
+        flyingSaucer.armory = mock(Armory.class);
 
         flyingSaucer.getPower();
 
-        verify(flyingSaucer.machinery).getGunPower();
+        verify(flyingSaucer.armory).getGunPower();
     }
 
 
@@ -28,13 +28,12 @@ public class FlyingSaucerTest {
 
 
 
-    //ALSO BAD WAY - try to reafcator FlyingSaucer so that it will not use Machinery to store gunPower - test will fail
-    //               even if algorith will be the same
+    //ALSO BAD WAY
     @Test
     public void should_use_machinery_when_calculating_power() {
         FlyingSaucer flyingSaucer = new FlyingSaucer(10, 5);
-        flyingSaucer.machinery = mock(Machinery.class);
-        when(flyingSaucer.machinery.getGunPower()).thenReturn(10);
+        flyingSaucer.armory = mock(Armory.class);
+        when(flyingSaucer.armory.getGunPower()).thenReturn(10);
 
         flyingSaucer.getPower();
 
@@ -49,7 +48,7 @@ public class FlyingSaucerTest {
 
 
 
-    //GOOD WAY - test Query methods by thay retur value
+    //GOOD WAY - test Query methods by that return value
     //           we are not connected with implementation details
     @Test
     public void should_calculate_power() {

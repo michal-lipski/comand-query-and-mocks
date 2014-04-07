@@ -15,8 +15,9 @@ public class FlyingSaucer {
     }
 
     public String gatherData() {
+        int year = timer.getTime().getYear();
         double data = scanner.getData();
-        DateTime time = timer.getTime();
-        return String.valueOf(data + time.getYear());
+
+        return String.valueOf(data + year);
     }
 }

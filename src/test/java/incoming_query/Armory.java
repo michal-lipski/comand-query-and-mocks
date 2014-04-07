@@ -1,13 +1,13 @@
 package incoming_query;
 
-public class Machinery {
+public class Armory {
     private int gunPower;
 
-    public Machinery(int gunPower) {
+    public Armory(int gunPower) {
         this.gunPower = gunPower;
     }
 
-    public Machinery() {
+    public Armory() {
     }
 
     public int getGunPower() {

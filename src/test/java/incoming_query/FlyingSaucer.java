@@ -3,16 +3,16 @@ package incoming_query;
 
 public class FlyingSaucer {
 
-    Machinery machinery;
+    Armory armory;
     int flyingSaucerPower;
 
     public FlyingSaucer(int flyingSaucerPower, int gunPower) {
         this.flyingSaucerPower = flyingSaucerPower;
-        machinery = new Machinery(gunPower);
+        armory = new Armory(gunPower);
     }
 
     public int getPower() {
-        return flyingSaucerPower * machinery.getGunPower();
+        return flyingSaucerPower * armory.getGunPower();
     }
 
 }
