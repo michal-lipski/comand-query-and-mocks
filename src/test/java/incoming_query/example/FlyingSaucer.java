@@ -1,4 +1,4 @@
-package incoming_query;
+package incoming_query.example;
 
 
 public class FlyingSaucer {
