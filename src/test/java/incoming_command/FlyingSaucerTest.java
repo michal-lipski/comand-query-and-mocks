@@ -13,6 +13,7 @@ public class FlyingSaucerTest {
 
         flyingSaucer.upgradeGun(5);
 
+        //assert on public state change
         assertThat(flyingSaucer.getPower()).isEqualTo(100);
     }
 }

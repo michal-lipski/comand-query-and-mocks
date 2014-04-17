@@ -25,10 +25,9 @@ public class FlyingSaucerTest {
 
 
 
-
-
-
     //GOOD WAY - we are independent of SpaceShip
+
+
     @Test
     public void shooting_enemy_inflicting_damage_equals_to_power() {
         FlyingSaucer flyingSaucer = new FlyingSaucer(10, 5);
@@ -36,6 +35,7 @@ public class FlyingSaucerTest {
 
         flyingSaucer.shoot(enemy);
 
+        //verify that message was send
         verify(enemy).inflictDamage(50);
     }
 

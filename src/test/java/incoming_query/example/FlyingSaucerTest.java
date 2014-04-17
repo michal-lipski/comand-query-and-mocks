@@ -47,15 +47,13 @@ public class FlyingSaucerTest {
 
 
 
-
-    //GOOD WAY - test Query methods by that return value
-    //           we are not connected with implementation details
     @Test
     public void should_calculate_power() {
         FlyingSaucer flyingSaucer = new FlyingSaucer(10, 5);
 
         int power = flyingSaucer.getPower();
 
+        //assert on returned value
         assertThat(power).isEqualTo(50);
     }
 

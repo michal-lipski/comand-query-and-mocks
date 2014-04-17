@@ -47,9 +47,14 @@ public class FlyingSaucerTest {
     //              have to fetch data and make it available for DataAwareFlyingSaucer.
     //              Its job will be to simply execute commands and glue other classes together.
     //              Maybe we will not need to test it at all?
+
+
+
     @Test
     public void gathers_data_() {
-        DataAwareFlyingSaucer flyingSaucer = new DataAwareFlyingSaucer(2.0, currentYear);
+        double scannerData = 2.0;
+        DateTime timerData = currentYear;
+        DataAwareFlyingSaucer flyingSaucer = new DataAwareFlyingSaucer(scannerData, timerData);
 
         String data = flyingSaucer.gatherData();
 
