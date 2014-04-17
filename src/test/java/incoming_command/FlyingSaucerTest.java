@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-//INCOMING COMMAND METHOD
+
 public class FlyingSaucerTest {
 
     @Test
